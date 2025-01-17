@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Patrones Responsive Web Design - 2 Columnas</title>
+    
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="Patrones%20Responsive%20Web%20Design%20-%202%20Columnas_files/normalize.css"><link href="Patrones%20Responsive%20Web%20Design%20-%202%20Columnas_files/css.css" rel="stylesheet"><link rel="stylesheet" href="Patrones%20Responsive%20Web%20Design%20-%202%20Columnas_files/styles.css"></head>
+
+<body>
+
+    <div class="contenedor">
+        <article class="entrada-blog">
+            <h1>Titulo Entrada Blog</h1>
+            <img src="Patrones%20Responsive%20Web%20Design%20-%202%20Columnas_files/imagen1.jpg">
+            <p>Maecenas maximus urna vitae nisl semper, id volutpat 
+ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, 
+venenatis risus. Quisque varius orci et augue scelerisque luctus.</p>
+            <a href="#">Leer más</a>
+        </article>
+        <article class="entrada-blog">
+            <h1>Titulo Entrada Blog</h1>
+            <img src="Patrones%20Responsive%20Web%20Design%20-%202%20Columnas_files/imagen2.jpg">
+            <p>Maecenas maximus urna vitae nisl semper, id volutpat 
+ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, 
+venenatis risus. Quisque varius orci et augue scelerisque luctus.</p>
+            <a href="#">Leer más</a>
+        </article>
+    </div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

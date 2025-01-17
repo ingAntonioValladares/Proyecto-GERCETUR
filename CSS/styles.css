@@ -1,0 +1,1460 @@
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --gris: #757575;
+    --grisClaro:#DFE9F3;
+    --celeste: #2CD3FA;
+    --doradoscuro: #bf930d;
+    --oro: #ffbf00;
+    --magentarosa: #77104a;
+    --marron: #663300;
+    --fonth1: 'PT Serif', serif; /* h1 y h2 */
+    --fonth3: 'Open Sans', sans-serif; /* h3 */
+    --parrafo: 'Roboto', sans-serif;
+    --testimonial: 'Beau Rivage', cursive;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px;
+    background-color: var(--blanco);
+}
+
+/* GENERICAS */
+a{
+    font-family: sans-serif;
+}
+h1{
+    font-size: 3rem;
+    font-family: var(--fonth1);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 2.5rem;
+    font-family: var(--fonth1);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+h3{
+    font-size: 2rem;
+    font-family: var(--fonth3);
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+p{
+    font-size: 2rem;
+    margin: 0;
+    font-family: var(--parrafo);
+    padding: 2rem 1rem;
+    text-align: justify;
+}
+li{
+    font-size: 2rem;
+    margin: 0;
+}
+span,
+.nombre-cientifico{
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 auto;
+    padding: 0 4rem;
+    font-family: var(--testimonial);
+    text-align: center;
+}
+.fz3{
+    font-size: 3rem;
+}
+img{
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+.rotar{
+    transform: scaleX(-1);
+}
+@media (min-width: 768px) {
+    h1{
+        font-size: 4rem;
+    }
+    h2{
+        font-size: 3.5rem;
+    }
+    h3{
+        font-size: 3rem;
+    }
+    p{
+        font-size: 2.5rem;
+    }
+    span{
+        font-size: 2.5rem;
+    }
+    img{
+        height: 400px;
+        width: 400px;
+    }  
+}
+
+/* UTILIDADES */
+.deslizar-grid{
+    grid-column: 1/3;
+}
+.boton3,
+.boton4{
+    text-decoration: none;
+    padding: 20px 50px;
+    position: relative;
+    margin-top: 2rem;
+    font-size: 25px;
+}
+.boton3.type3{color: var(--oscuro)}
+.boton3.type3.type3::after,.boton3.type3.type3::before{
+    content:"";
+    display:block;
+    position:absolute;
+    width:20%;
+    height:20%;
+    border:2px solid;
+    transition:all .6s ease;
+}
+.boton3.type3.type3::after{
+    bottom:0;
+    right:0;
+    border-color:transparent  var(--oscuro)  var(--oscuro) transparent;
+}
+.boton3.type3.type3::before{
+    top:0;
+    left:0;
+    border-color: var(--oscuro) transparent transparent  var(--oscuro);
+}
+.boton3.type3.type3:hover:after,.boton3.type3.type3:hover:before{
+    border-color: var(--oscuro);
+    width:100%;
+    height:100%;
+}
+.boton4.type4{
+    color:var(--oscuro);
+}
+.boton4.type4.type4:after,.boton4.type4.type4:before{
+    content:"";
+    display:block;
+    position:absolute;
+    border: 1px solid;
+    top:100%;
+    left:0;
+    width:100%;
+    height:2px;
+    background-color:var(--oscuro);transition:all .3s ease;
+    transform:scale(0.85);
+}
+.boton4.type4.type4:hover:before{
+    top:0;
+    transform:scale(1);
+}
+.boton4.type4.type4:hover:after{
+    transform:scale(1);
+}
+
+.boton2{
+    font-size: 1.6rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;  
+    color: var(--oscuro);
+    outline: 2.5px solid var(--oro);
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: color .5s;
+}
+.boton2:hover{
+    color: var(--blanco);
+}
+.boton2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    background-color: var(--oro);
+    transform: skewX(25deg);
+    z-index: -1;
+    transition: width .5s;
+}
+.boton2:hover::before{
+    width: 120%;
+}
+.boton5{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    text-decoration: none;
+    color: var(--oscuro);
+    outline: 2.5px solid var(--magentarosa);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: color .5s;
+    position: relative;
+    overflow: hidden;
+}
+.boton5:hover{
+    color: var(--blanco);
+}
+.boton5::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-color: var(--magentarosa);
+    z-index: -1;
+    top: -300px;
+    left: 0;
+    transition: .5s ease-in-out all;
+    border-radius: 0px 0px 300px 300px;
+}
+.boton5:hover::after{
+    top: 0;
+}
+.alinear-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pr-pl-4{
+    padding: 0rem;
+}
+.margin-top{
+    margin-top: 2rem;
+}
+.parrafo-esp{
+    padding-top: .8rem;
+    font-size: 1.1rem;
+    padding-bottom: 0;
+}
+@media (min-width: 768px) {
+    .pr-pl-4{
+        padding: 0rem 4rem;
+    }
+}
+.titulo{
+    margin-bottom: 2rem;
+    padding-bottom: 4rem;
+    border-bottom: 4px solid var(--oro);
+}
+@media (min-width: 768px) {
+    .titulo{
+        margin-bottom: 4rem;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+}
+ul{
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .boton{
+        text-decoration: none;
+        color: var(--oscuro);
+        padding: 20px 50px;
+        border: 2px solid var(--oscuro);
+        position: relative;
+        margin-top: 2rem;
+        font-size: 25px;
+    }
+    .boton::before,
+    .boton::after{
+        content: "";
+        position: absolute;
+        border: inherit;
+        transition: all .5s;
+        width: 40px;
+        height: 40px;
+    }
+    .boton::before{
+        top: -15px;
+        left: -15px;
+        border-width: 2px 0 0 2px;
+    }
+    .boton::after{
+        bottom: -13px;
+        right: -13px;
+        border-width: 0 2px 2px 0;
+    }
+    .boton:hover::before,
+    .boton:hover::after{
+        width: calc(100% + 27px);
+        height: calc(100% + 27px);
+    }
+}
+.centrar-texto{
+    text-align: center;
+}
+.contenedor{
+    max-width: 95%;
+    margin: 0 auto;
+}
+.bk{
+    border: 2px solid var(--celeste);
+}
+.bkp{
+    border: 2px solid var(--celeste);
+    margin: 2rem 0 2rem 0;
+}
+.bob{
+    border: 2px solid var(--oro);
+    margin: 5rem 0 2rem 0;
+}
+.parrafoesp{
+    font-size: 15px;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+} 
+.icono-logo{
+    width: 30rem;
+    height: 10rem;
+    object-fit: contain;
+}
+.icono{
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+.icono-pf{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+.icono-pf-banderas{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+@media (min-width: 768px) {
+    .icono-pf{
+        width: 50px;
+        height: 50px;
+    }
+    .icono-pf-banderas{
+        width: 80px;
+        height: 80px;
+    }
+    .icono-logo{
+        width: 40rem;
+        height: 10rem;
+    }
+}
+.icono__redondo{
+    border-radius: 40%;
+}
+.redondo{
+    border-radius: 50%;
+}
+.icono__porcentaje{
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+@media (min-width: 768px) {
+    .icono{
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+    }
+    .icono__porcentaje{
+        width: 280px;
+        height: 280px;
+        object-fit: contain;
+    }
+}
+/* principales mercados (parece una llave inferior a la bandera)
+    principales productos (border bottom a toda la caja)*/
+.esc-bb:hover{
+    transform: scale(1.1);
+    border-bottom: 2px solid var(--doradoscuro);
+} 
+.esc-br-bb:hover{
+    transform: scale(1.1);
+    border-right: 2px solid var(--doradoscuro);
+    border-bottom: 2px solid var(--doradoscuro);
+}
+.esc-bl-bb:hover{
+    transform: scale(1.1);
+    border-left: 2px solid var(--doradoscuro);
+    border-bottom: 2px solid var(--doradoscuro);
+}
+.hvcolor:hover{
+    color: var(--oro);
+}
+
+/* ---------------------------------NAVEGACIÓN----------------------------------*/
+/*
+.header{
+    background-color: #000000;
+background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}*/
+.nav{
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-link{
+    color: var(--blanco);
+    text-decoration: none;
+}
+.nav-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.nav-menu-item{
+    font-size: 18px;
+    margin: 10px 0px;
+    text-transform: uppercase;
+    width: max-content;
+}
+.nav-menu-item:last-of-type{
+    margin: 1.5rem 0 3rem 0;
+}
+.nav-menu-link{
+    padding: 8px 4px;
+    /*
+    border: 8px 12px;*/
+}
+.nav-menu-link:hover,
+.nav-menu-link-active{
+    border-bottom: solid 1px var(--oro);
+    transition: .5s;
+    /*
+    background-color: var(--oro);
+    transition: .5s;
+    */
+}
+@media (min-width: 768px) {
+    .nav{
+        flex-direction: row;
+        padding: 0 8rem;
+    }
+    .nav-menu{
+        flex-direction: row;
+    }
+    .nav-menu-item{
+        font-size: 18px;
+        margin: 0 10px;
+        text-transform: uppercase;
+        width: max-content;
+    }
+    .nav-menu-item:last-of-type{
+        margin-left: 10px;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+/*
+.nav-toggle{
+    color: var(--blanco);
+    border: none;
+    font-size: 30px;
+    padding: 20px 20px;
+    line-height: 60px;
+    cursor: pointer;
+    
+    display: none;
+}
+*/
+/*
+@media (max-width: 768px) {
+    .icono-logo{
+        width: 20rem;
+        height: 6rem;
+        object-fit: contain;
+        margin-left: 10px;
+    }
+    .header{
+        height: 60px;
+    }
+    .nav-menu{
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        background-color: #757575;
+        position: fixed;
+        left: 0;
+        top: 20px;
+        width: 100%;
+        padding: 20px 0;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .nav-menu-item{
+        font-size: 16px;
+        margin: 10px 0;
+        text-transform: uppercase;
+        width: max-content;
+    }
+    .nav-menu-item:last-of-type{
+        margin: 10px 0 0 0;
+    }
+    .nav-menu-link:hover,
+    .nav-menu-link-active{
+        background: none;
+        color: #83c5f7;
+    }
+    .nav-toggle{
+        display: block;
+    }
+    .nav-menu_visible{
+        left: 0;
+    }
+}*/
+
+
+
+
+/* DIRECTIVA*/
+.directiva{
+    display: flex;
+    justify-content: space-evenly;
+}
+.gerent,
+.comercio-exterior,
+.turismo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Creando efecto OVERLAY*/
+/*---------- para gerente*/
+.img-gerente-overlay{
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-image: url('../IMG/gerente-regional.JPG');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+
+    position: relative;
+    overflow: hidden;
+}
+.img-gerente-overlay:hover::after{
+    transform: translateY(0);
+}
+.img-gerente-overlay::after{
+    content: "ULISES PONTE LÓPEZ";
+    font-size: 1.2rem;
+    color: var(--blanco);
+    background-color: #16456198;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+/*---------- para comercio exterior*/
+.img-ce-overlay{
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-image: url('../IMG/directora\ de\ ce.JPG');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+
+    position: relative;
+    overflow: hidden;
+}
+.img-ce-overlay:hover::after{
+    transform: translateY(0);
+}
+.img-ce-overlay::after{
+    content: "DANNA JIMENEZ BOGGIO";
+    font-size: 1.2rem;
+    color: var(--blanco);
+    background-color: #16456198;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+/*---------- para turismo*/
+.img-tu-overlay{
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-image: url('../IMG/director\ de\ turismo.JPG');
+    background-size: 100px;
+    background-position: center;
+    border-radius: 10%;
+
+    position: relative;
+    overflow: hidden;
+}
+.img-tu-overlay:hover::after{
+    transform: translateY(0);
+}
+.img-tu-overlay::after{
+    content: "JUAN GANVINI FALEN";
+    font-size: 1.2rem;
+    color: var(--blanco);
+    background-color: #16456198;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 10%;
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+@media (min-width: 768px) {
+    .img-gerente-overlay{
+        width: 400px;
+        height: 400px;
+    }
+    .img-ce-overlay,
+    .img-tu-overlay{
+        width: 400px;
+        height: 400px;
+        margin-top: 50px;
+    }
+    .img-gerente-overlay::after,
+    .img-ce-overlay::after,
+    .img-tu-overlay::after{
+        font-size: 2rem;
+    }
+}
+
+/* PERSONAS */
+/*----------GERENTE REGIONAL */
+.imagen-directivos{
+    width: 200px;
+    height: 200px;
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+.contenido-gerente{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .imagen-directivos{
+        width: 450px;
+        height: 450px;
+    }
+    .gerente__declaracion,
+    .contacto{
+        flex-direction: row;
+        gap: 15rem;
+    }
+    .declaracion{
+        width: 50rem;
+    }
+    .gerente__declaracion{
+        margin-top: 6rem;
+        margin-bottom: 12rem;
+    }
+}
+/* COMERCIO EXTERIOR */
+.contenido-comercio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenido-comercio p{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.contenido-contacto p{
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 0;
+}
+.contenido-comercio a{
+    margin-top: 4rem;
+}
+.contenido-gerente a{
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .contacto{
+        margin-top: 6rem;
+    }
+    .contenido-comercio a{
+        margin-top: 12rem;
+    }
+    .contenido-gerente a{
+        margin-top: 12rem;
+    }
+    .contenido-comercio p{
+        padding: 2rem 1rem;
+    }
+}
+/*---------DIRECTOR DE TURISMO*/
+
+
+/* REGION LAMBAYEQUE */
+.lambayeque{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.lambayeque h1{
+    margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .lambayeque h1{
+        margin-bottom: 6rem;
+    }
+}
+.economia-contenido{
+    display: flex;
+    justify-content: center;
+}
+.grid3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+} /* version movil*/
+@media (min-width: 768px) {
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    } /* version web */
+}
+
+
+/*------------------- POBLACION */
+.poblacion{
+    margin-bottom: 4rem;
+}
+.poblacion h3{
+    margin-top: 0;
+}
+@media (min-width: 768px) {
+    .poblacion{
+        margin-bottom: 0;
+    }
+}
+.poblacion__contenido{
+    padding: 2rem;
+}
+@media (min-width: 768px) {
+    .poblacion__contenido{
+        margin-top: 2rem;
+        margin-bottom: 6rem;
+    }
+}
+.poblacion__estadistica{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+}
+.estadistica__hombre{
+    align-items: center;
+}
+.estadistica__hombre p{
+    text-align: center;
+}
+.estadistica__mujer{
+    align-items: center;
+}
+.estadistica__mujer p{
+    text-align: center;
+}
+
+/*------------------- TERRITORIO */
+.territorio{
+    margin-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    .territorio{
+        margin-bottom: 0;
+    }
+}
+.territorio h3{
+    margin-top: 0;
+}
+.territorio__contenido{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.provdist,
+.repreterr,
+.ranking{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+}
+
+/*------------------- ECONOMIA */
+
+.economia-contenido{
+    padding: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.comercio,
+.manufactura,
+.construccion,
+.agricultura,
+.transporte
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--magentarosa);
+}
+.comercio:hover,
+.manufactura:hover,
+.construccion:hover,
+.agricultura:hover,
+.transporte:hover
+{
+    transform: none;
+    text-decoration: underline;
+    text-decoration-style: double;
+}
+.comercio{
+    border-left: 2px solid var(--magentarosa);
+}
+.manufactura{
+    border-right: 2px solid var(--magentarosa);  
+}
+.construccion{
+    border-left: 2px solid var(--magentarosa);
+}
+.agricultura{
+    border-right: 2px solid var(--magentarosa); 
+}
+.transporte{
+    border-left: 2px solid var(--magentarosa);
+}
+@media (min-width: 768px) {
+    .economia-contenido{
+        padding: 2rem;
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .comercio,
+    .manufactura,
+    .construccion,
+    .agricultura,
+    .transporte
+    {
+        border: none;
+    }
+    .comercio:hover,
+    .manufactura:hover,
+    .construccion:hover,
+    .agricultura:hover,
+    .transporte:hover
+    {
+        transform: scale(1.1);
+        text-decoration: underline;
+        text-decoration-style: double;
+    }
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* EXPORTACIONES LAMBAYEQUE */
+/* ------------------------- PRINCIPALES PRODUCTOS*/
+.pr-exportaciones{
+    margin-top: 6rem;
+}
+.pr-exportaciones__contenido{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    .pr-exportaciones__contenido{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 2rem;
+    }
+}
+.palta,
+.uva,
+.arandano,
+.cafe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*
+.palta:hover,
+.uva:hover,
+.arandano:hover,
+.cafe:hover{
+    transform: scale(1.1);
+    border-bottom: 2px solid var(--doradoscuro);
+}
+*/
+
+/* ------------------------- PRINCIPALES MERCADOS*/
+.pr-mercados{
+    margin-top: 4rem;
+}
+.paises{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    align-items: center;
+}
+.eeuu,
+.paisesbajos,
+.ecuador,
+.alemania,
+.reinounido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .grid3{
+        gap: 2rem;
+    }   
+}
+.grid2{
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.paisesbajos p{
+    text-align: center;
+}
+/*--------------------------- NO TRADICIONAL*/
+.porc-notradicional,
+.porc-tradicional{
+    margin-top: 4rem;
+}
+.info-prct{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+.info-prct img{
+    width: 50px;
+    height: 50px;
+}
+.info-prct h3{
+    margin-top: 0;
+}
+.agropecuario,
+.quimico,
+.textil,
+.metal-mecanico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.metal-mecanico p {
+    text-align: center;
+}
+/*--------------------------- TRADICIONAL*/
+.tradicional{
+    display: flex;
+    justify-content: space-evenly;
+}
+.melazas{
+    margin-left: 2rem;
+}
+@media (min-width: 768px) {
+    .tradicional{
+        justify-content: space-around;
+        margin-left: 0;
+        gap: 2rem;
+    }
+    .melazas{
+        margin-left: 2rem;
+    }
+}
+.cafe,
+.melazas,
+.chancaca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*------------ PRODUCTOS FRESCOS -------------------------------*/
+.mv-contenido-pf{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    padding: 2rem 0;
+}
+.productos-frescos{
+    display: none;
+}
+.mv-productos-frescos{
+    display: block;
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .productos-frescos{
+        display: block;
+        margin-top: 8rem;
+    }
+    .mv-productos-frescos{
+        display: none;
+    }
+    .contenido-pf{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+        padding: 4rem 0;
+    }   
+}
+.pf-titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pf-titulo h2{
+    margin-top: 0;
+}
+.arandanoo,
+.paltaa,
+.mango,
+.uvaa,
+.banano,
+.esparrago,
+.maracuya,
+.limon,
+.granada,
+.cebolla{
+    border-radius: 1%;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.arandanoo,
+.paltaa,
+.mango,
+.uvaa,
+.banano,
+.esparrago,
+.maracuya,
+.limon,
+.granada,
+.cebolla{
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+}
+.boton6{
+    border: .2rem solid var(--celeste);
+    padding: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: var(--oscuro);
+    transition: color .5s;
+}
+.boton6:hover{
+    color: var(--blanco);
+    background-color: var(--celeste); 
+}
+
+/*-------------- HTML ARANDANO*/
+.principales-mercados{
+    border: none;
+}
+@media (min-width: 768px) {
+    .principales-mercados{
+        border-right: 4px solid var(--oro);
+    }
+}
+.grid2-3070{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .grid2-3070{
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+}
+.contenido-banderas{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+@media (min-width: 768px) {
+    .contenido-banderas{
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.contenido-meses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .contenido-meses{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        margin-top: 4rem;
+    }
+}
+.estaciones-zonas{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .estaciones-zonas{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+.contenido-img-var{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.pr-zonas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenido-boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+.w250{
+    width: 250px;
+}
+.contenido{
+    margin-bottom: 4rem;
+}
+
+/*-------------- HTML PALTA*/
+.presentaciones{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .presentaciones{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+.zonas{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0 4rem;
+}
+@media (min-width: 768px) {
+    .zonas{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem 4rem;
+    }
+}
+
+/*-------------- HTML MANGO*/
+.pulpa{
+    grid-column: 1/4;
+}
+
+/*-------------- HTML UVA*/
+.presentaciones-uva{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .presentaciones-uva{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+/*-------------- HTML BANANO*/
+.presentaciones-banana{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .presentaciones-banana{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+
+/*------------------------- ALIMENTOS PROCESADOS ---------------------------*/
+.alimentos-procesados{
+    display: none;
+}
+.mv-alimentos-prcesados{
+    display: block;
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .alimentos-procesados{
+        display: block;
+        margin-top: 8rem;
+    }   
+    .mv-alimentos-prcesados{
+        display: none;
+    }
+    .contenido-ap{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+        padding: 4rem 0;
+    }   
+}
+
+.pimiento-morron,
+.pimiento-cherry,
+.pimiento-piquillo,
+.aji-jalapeño,
+.aji-paprika,
+.langostino,
+.king-kong,
+.caña{
+    border-radius: 1%;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.pimiento-morron,
+.pimiento-cherry,
+.pimiento-piquillo,
+.aji-jalapeño,
+.aji-paprika,
+.langostino,
+.king-kong,
+.caña{
+    background-color: #f3f4f7;
+    background-image: linear-gradient(315deg, #f3f4f7 0%, #caccd1 74%);
+}
+.ap-titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ap-titulo h2{
+    margin-top: 0;
+}
+
+/*---------------------GRANOS----------------------*/
+.cafee,
+.frijol-palo,
+.frijol-castilla,
+.frijol-pallar,
+.arroz{
+    border-radius: 1%;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.cafee,
+.frijol-palo,
+.frijol-castilla,
+.frijol-pallar,
+.arroz{
+    background-color: #d9d9d9;
+background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+}
+.granos{
+    display: none;
+}
+.mv-contenido-granos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    padding: 2rem 0;
+}
+.mv-granos{
+    display: block;
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .granos{
+        display: block;
+        margin-top: 8rem;
+    }
+    .mv-granos{
+        display: none;
+    }
+    .contenido-granos{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+        padding: 4rem 0;
+    }  
+}
+
+/* ---------DESARROLLADOR*/
+/*
+.main{
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+}
+.main__imagen{
+    border-radius: 25%;
+    width: 20rem;
+    margin-left: 10rem;
+}
+.main__titulo{
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+}
+.main__detalle{
+    text-align: justify;
+}
+@media (min-width: 768px) {
+    .main{
+        display: flex;
+        gap: 30rem;
+        align-items: center;
+        padding: 2rem 10rem;
+    }
+    .main__imagen{
+        width: 500px;
+        margin-left: 0;
+    }
+}
+*/
+/*FOOTER*/
+.footer{
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--blanco);
+    padding: 2rem;
+}
+.footer h3{
+    margin-top: 0;
+    font-size: 15px;
+}
+.footer p{
+    font-size: 15px;
+}
+@media (min-width: 768px) {
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 8rem;
+    }
+    .footer h3{
+        margin-top: 0;
+        font-size: 2rem;
+    }
+    .footer p{
+        font-size: 2rem;
+    }
+}
+
+.datos-desarrollador h3{
+    color: var(--oscuro);
+}
+.datos-desarrollador p{
+    padding-left: 0;
+}
+.datos-desarrollador p:last-child{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.desarrollador{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+.icono-desarrollador{
+    width: 120px;
+    height: 155px;
+}
+@media (min-width: 768px) {
+    .icono-desarrollador{
+        width: 130px;
+        height: 198px;
+    }
+}
+.icono-redes{
+    width: 50px;
+    height: 50px;
+
+}
