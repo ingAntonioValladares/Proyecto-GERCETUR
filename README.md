@@ -5,7 +5,10 @@ Este proyecto web se desarrollo por iniciativa propia en base a un catalogo de p
 ## Instalación
 
 1. Clona el repositorio
-2. Ejecuta el proyecto con `npm start`.
+
+## Contacto
+cel: 942 066 667
+correo: l.valladares.briones@gmail.com
 
 ## Contribuciones
 
