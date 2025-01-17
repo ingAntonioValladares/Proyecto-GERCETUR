@@ -1,4 +1,4 @@
-# Mi Proyecto Web
+# Proyecto GERCETUR
 
 Este proyecto web se desarrollo por iniciativa propia en base a un catalogo de productos de exportacion que compartio impreso la Gerencia Regional de Turismo y Comercio Exterior de Chiclayo - GERCETUR
 
